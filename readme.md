@@ -1,12 +1,11 @@
-````markdown
 # 🚀 Visitor Counter API with Redis ❤️
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
-<img src="https://img.shields.io/badge/Redis-Cache%20Engine-DC382D?style=for-the-badge&logo=redis&logoColor=white"/>
-<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-<img src="https://img.shields.io/badge/Render-Deployed-46E3B7?style=for-the-badge&logo=render&logoColor=black"/>
+<img src="https://img.shields.io/badge/FastAPI-Backend-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI Badge"/>
+<img src="https://img.shields.io/badge/Redis-Cache%20Engine-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis Badge"/>
+<img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge"/>
+<img src="https://img.shields.io/badge/Render-Deployed-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render Badge"/>
 
 <br/>
 <br/>
@@ -17,10 +16,10 @@
 **Redis Caching • FastAPI APIs • Real-Time State Management • Backend Architecture**
 
 🔗 **Live Demo:**  
-https://visitor-counter-api-redis-2.onrender.com/
+[https://visitor-counter-api-redis-2.onrender.com/](https://visitor-counter-api-redis-2.onrender.com/)
 
 🔗 **GitHub Repository:**  
-https://github.com/ShashankNalkande1/fastapi_heart_redis
+[https://github.com/ShashankNalkande1/fastapi_heart_redis](https://github.com/ShashankNalkande1/fastapi_heart_redis)
 
 </div>
 
@@ -272,4 +271,3 @@ Backend-focused engineer building scalable systems using:
 🧠 Master backend architecture.
 
 </div>
-````
