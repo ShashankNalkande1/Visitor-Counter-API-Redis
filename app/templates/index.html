@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>❤️ Instagram Heart Counter</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+        }
+        .card {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 2rem;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .heart {
+            font-size: 8rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.2s ease;
+        }
+        .heart:hover { transform: scale(1.1); }
+        .heart:active { transform: scale(0.95); }
+        .counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            color: #333;
+        }
+        .label {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+        button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background: #eee;
+            border-radius: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="label">Click the heart ❤️</div>
+    <div class="heart" id="heartIcon">❤️</div>
+    <div class="counter">
+        <span id="likeCount">0</span> <span style="font-size:1.2rem;">likes</span>
+    </div>
+    <button onclick="refreshCount()">↻ Refresh</button>
+</div>
+
+<script>
+    const API_BASE = '';
+
+    async function fetchLikes() {
+        try {
+            const res = await fetch(`${API_BASE}/likes`);
+            if (!res.ok) throw new Error('Network error');
+            const data = await res.json();
+            document.getElementById('likeCount').innerText = data.likes;
+        } catch (err) {
+            console.error('Failed to fetch likes:', err);
+        }
+    }
+
+    async function sendLike() {
+        try {
+            const res = await fetch(`${API_BASE}/like`, { method: 'POST' });
+            if (!res.ok) throw new Error('Like failed');
+            const data = await res.json();
+            document.getElementById('likeCount').innerText = data.likes;
+            const heart = document.getElementById('heartIcon');
+            heart.style.transform = 'scale(1.3)';
+            setTimeout(() => { heart.style.transform = ''; }, 200);
+        } catch (err) {
+            console.error('Like error:', err);
+            alert('Could not like. Check if server is running.');
+        }
+    }
+
+    function refreshCount() { fetchLikes(); }
+
+    document.getElementById('heartIcon').addEventListener('click', sendLike);
+    fetchLikes();
+</script>
+</body>
+</html>
